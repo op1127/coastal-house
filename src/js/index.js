@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		const scene = new BABYLON.Scene(engine);
 
 		scene.environmentTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(
-			"./textures/coast.dds",
+			"./textures/environment.env",
 			scene
 		);  
 
@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
 		skyboxMaterial.backFaceCulling = false;
 		skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-			"./textures/coast4k/coast",
+			"./textures/coast/coast",
 			scene
 		);
 		skyboxMaterial.reflectionTexture.coordinatesMode =
