@@ -19,11 +19,11 @@ window.addEventListener("DOMContentLoaded", function() {
 	const createScene = function() {
 		// create a basic BJS Scene object
 		const scene = new BABYLON.Scene(engine);
-
+		/*
 		scene.environmentTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(
 			"./textures/environment.env",
 			scene
-		);  
+		);   */
 
 		const skybox = BABYLON.MeshBuilder.CreateBox(
 			"skyBox",
@@ -69,7 +69,8 @@ window.addEventListener("DOMContentLoaded", function() {
 		const room = BABYLON.SceneLoader.ImportMesh(
 			null,
 			"./models/",
-			"coastal-house.glb",
+			//"coastal-house.glb",
+			"model.glb",
 			scene,
 			function(scene) {
 				// do something with the scene
@@ -79,14 +80,21 @@ window.addEventListener("DOMContentLoaded", function() {
 				removeLoadingScreen();
 			}
 		); 
-	
+			// X Z Y
 		const ambientLamp = new BABYLON.HemisphericLight(
 			"HemiLight",
-			new BABYLON.Vector3(0, 0, 0),
+			new BABYLON.Vector3(0, 50, 0),
 			scene
 		);
-
-		ambientLamp.intensity = .6;
+			
+		const ambientLamp2 = new BABYLON.HemisphericLight(
+			"HemiLight",
+			new BABYLON.Vector3(0, -50, 0),
+			scene
+		); 
+	
+		ambientLamp.intensity = 2;
+		ambientLamp2.intensity = .075;
 
 		//Set gravity for the scene (G force like, on Y-axis)
 		scene.gravity = new BABYLON.Vector3(0, -0.9, 0);
