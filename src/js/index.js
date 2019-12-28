@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		scene.environmentTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(
 			"./textures/environment.env",
 			scene
-		);   */
+		);    */
 
 		const skybox = BABYLON.MeshBuilder.CreateBox(
 			"skyBox",
@@ -80,21 +80,23 @@ window.addEventListener("DOMContentLoaded", function() {
 				removeLoadingScreen();
 			}
 		); 
+
+		
 			// X Z Y
 		const ambientLamp = new BABYLON.HemisphericLight(
 			"HemiLight",
-			new BABYLON.Vector3(0, 50, 0),
+			new BABYLON.Vector3(0, 1, 0),
 			scene
 		);
 			
 		const ambientLamp2 = new BABYLON.HemisphericLight(
 			"HemiLight",
-			new BABYLON.Vector3(0, -50, 0),
+			new BABYLON.Vector3(0, -10, 0),
 			scene
 		); 
 	
 		ambientLamp.intensity = 2;
-		ambientLamp2.intensity = .075;
+		ambientLamp2.intensity = .1;
 
 		//Set gravity for the scene (G force like, on Y-axis)
 		scene.gravity = new BABYLON.Vector3(0, -0.9, 0);
