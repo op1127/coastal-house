@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		camera.attachControl(canvas, false);
 
 		//Set the ellipsoid around the camera (e.g. your player's size)
-		camera.ellipsoid = new BABYLON.Vector3(1, 2.3, 1);
+		camera.ellipsoid = new BABYLON.Vector3(1, 2, 1);
 
 		camera.speed = 1.1;
 		camera.inertia = 0.7;
@@ -70,7 +70,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			null,
 			"./models/",
 			//"coastal-house.glb",
-			"model.glb",
+			"model-v2.glb",
 			scene,
 			function(scene) {
 				// do something with the scene
